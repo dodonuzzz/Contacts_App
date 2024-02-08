@@ -1,0 +1,28 @@
+﻿@model Ziyaaaaaaaa.Models.Student
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm("Edit", "Student", FormMethod.Post))
+{
+    @Html.HiddenFor(model => model.StudentId)
+
+    <div>
+        @Html.LabelFor(model => model.StudentName)
+        @Html.TextBoxFor(model => model.StudentName)
+    </div>
+    <div>
+        @Html.LabelFor(model => model.Age)
+        @Html.TextBoxFor(model => model.Age)
+    </div>
+
+    <input type="submit" value="Save" />
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
